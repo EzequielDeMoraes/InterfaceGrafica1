@@ -14,8 +14,33 @@ body {
 div#container {
   width: 80%;
   padding: 20px;
+  border-radius: 25px;
+}
+#resultadoFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#h2Change {
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 60px;
+}
+#resultado {
+  text-align: center;
+  border-radius: 50px;
+  font-size: 50px;
+  margin-bottom: 20px;
+  transition: 0.5s;
+  width: fit-content;
 }
 
+#resultado:hover {
+  font-size: 60px;
+  color: rgb(78, 203, 78);
+}
 div#wrapper {
   width: 100%;
   display: grid;
@@ -30,12 +55,12 @@ div#wrapper {
 
 .inputClass {
   width: 100%;
-  font-size: 30px;
+  font-size: 40px;
   background-color: transparent;
   outline: none;
   border: none;
-  border-bottom: 3px solid skyblue;
-  border-radius: 25px;
+  border-bottom: 3px solid black;
+
   text-align: center;
   transition: 0.3s linear;
 }
@@ -43,8 +68,35 @@ div#wrapper {
 .inputClass:focus,
 .inputClass:hover {
   padding: 10px 10px;
-  background-color: skyblue;
+  font-size: 45px;
   transition: 1s;
+  color: rgb(68, 181, 68);
+}
+
+.inputClass::placeholder {
+  color: red;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.inputClass:focus {
+  color: rgb(68, 181, 68);
+}
+
+.inputClass:focus::placeholder {
+  opacity: 0;
+  color: rgb(68, 181, 68);
+}
+
+.inputClass:focus:hover::placeholder {
+  opacity: 0;
+  color: rgb(68, 181, 68);
+}
+
+.inputClass:hover::placeholder {
+  opacity: 1;
+  color: rgb(68, 181, 68);
+  border-bottom: 3px solid rgb(68, 181, 68);
 }
 
 #submit {
@@ -67,4 +119,14 @@ div#wrapper {
   color: red;
   font-size: 35px;
   border-radius: 50px;
+}
+
+#send:hover span {
+  display: none;
+}
+
+#send:hover:before {
+  transition: 1s;
+  content: "✉️";
+  font-size: 70px;
 }

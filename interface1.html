@@ -9,8 +9,9 @@
   </head>
   <body>
     <div id="container">
-      <h2 id="h2Change">inputs</h2>
-      <h2></h2>
+      <div id="resultadoFlex">
+        <h3 id="resultado">Calculadora</h3>
+      </div>
       <form id="formId" action="">
         <div id="wrapper">
           <!-- input1 -->
@@ -20,25 +21,29 @@
               type="text"
               id="n1"
               required
-              placeholder="PrmeiroNumero"
+              placeholder="digite um numero"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
             />
           </div>
 
           <!-- input2 -->
           <div class="inputDiv">
             <input
-              class="inputClass"
               type="text"
+              class="inputClass"
               id="n2"
               required
-              placeholder="segundo numero"
+              placeholder="Segundo Numero"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
             />
           </div>
         </div>
 
         <!-- submit -->
         <div id="submit">
-          <input id="send" type="submit" name="" value="send" />
+          <button id="send">
+            <span id="changeOnHoover">Send</span>
+          </button>
         </div>
       </form>
     </div>
